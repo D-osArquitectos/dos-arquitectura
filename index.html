@@ -11,7 +11,6 @@
       background: #f5f5f5;
       color: #333;
     }
-
     header {
       padding: 1rem;
       display: flex;
@@ -22,90 +21,42 @@
       border-bottom: 1px solid #ddd;
       position: sticky;
       top: 0;
-      z-index: 10;
     }
-
-    .logo-wrapper {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
     header img {
       height: 55px;
     }
-
-    nav {
-      display: flex;
-      gap: 0.75rem;
-      align-items: center;
-    }
-
-    nav a {
-      color: #444;
-      text-decoration: none;
-      font-size: 0.95rem;
-    }
-
-    nav a + a {
-      margin-left: 0.5rem;
-    }
-
-    /* Botón hamburguesa */
-    .menu-toggle {
-      display: none;
-      background: none;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      padding: 0.25rem 0.5rem;
-      font-size: 1.4rem;
-      cursor: pointer;
-    }
-
     .hero {
       padding: 4rem 1.5rem;
       text-align: center;
       background: linear-gradient(135deg, #ffffff, #ededed);
     }
-
-    .hero img {
-      height: 100px;
-      margin-bottom: 1rem;
-      opacity: 1;
-    }
-
     .hero h1 {
       font-size: 2.4rem;
       margin-bottom: 1rem;
       color: #222;
     }
-
     .hero p {
       max-width: 600px;
       margin: 0 auto;
       font-size: 1.15rem;
       color: #555;
     }
-
     .section {
       padding: 3rem 1.5rem;
       max-width: 1100px;
       margin: 0 auto;
     }
-
     .section h2 {
       font-size: 1.8rem;
       margin-bottom: 1rem;
       text-align: center;
       color: #222;
     }
-
     .services {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
       gap: 1.5rem;
     }
-
     .card {
       background: #ffffff;
       padding: 1.5rem;
@@ -113,9 +64,7 @@
       box-shadow: 0 2px 8px rgba(0,0,0,0.08);
       transition: 0.2s;
     }
-
     .card:hover { transform: translateY(-4px); }
-
     footer {
       text-align: center;
       padding: 2rem;
@@ -125,102 +74,23 @@
       border-top: 1px solid #ccc;
       backdrop-filter: blur(8px);
     }
-
-    /* =========================
-       VERSION MÓVIL / TABLET
-       ========================= */
-
-    @media (max-width: 768px) {
-      header {
-        padding: 0.75rem 1rem;
-      }
-
-      nav {
-        display: none;              /* oculto por defecto en móvil */
-        flex-direction: column;
-        width: 100%;
-        margin-top: 0.5rem;
-        text-align: center;
-      }
-
-      header.nav-open nav {
-        display: flex;             /* se muestra cuando se abre el menú */
-      }
-
-      .menu-toggle {
-        display: block;
-      }
-
-      header {
-        flex-wrap: wrap;
-      }
-
-      .hero {
-        padding: 2.8rem 1rem;
-      }
-
-      .hero img {
-        height: 80px;
-      }
-
-      .hero h1 {
-        font-size: 2rem;
-      }
-
-      .hero p {
-        font-size: 1rem;
-      }
-
-      .section {
-        padding: 2.3rem 1rem;
-      }
-    }
-
-    @media (max-width: 480px) {
-      header {
-        justify-content: space-between;
-      }
-
-      .hero h1 {
-        font-size: 1.7rem;
-      }
-
-      .hero p {
-        font-size: 0.95rem;
-      }
-
-      footer {
-        font-size: 0.85rem;
-        padding: 1.5rem 1rem;
-      }
-    }
   </style>
 </head>
 <body>
 
-  <header id="main-header">
-    <div class="logo-wrapper">
-      <img src="logo_dos.jpeg.jpeg" alt="Logo D-os Arquitectura" />
-    </div>
-
-    <button class="menu-toggle" aria-label="Abrir menú">
-      ☰
-    </button>
-
+  <header>
+    <img src="logo_dos.jpeg.jpeg" alt="Logo D-os Arquitectura" />
     <nav>
       <a href="#servicios">Servicios</a>
-      <span>|</span>
+      &nbsp; | &nbsp;
       <a href="#contacto">Contacto</a>
     </nav>
   </header>
 
   <section class="hero">
-    <img src="logo_dos.jpeg.jpeg" alt="Logo" />
+    <img src="logo_dos.jpeg.jpeg" alt="Logo" style="height:100px; margin-bottom:1rem; opacity:1;" />
     <h1>Diseñamos espacios con identidad</h1>
-    <p>
-      Arquitectura, construcción y mantenimiento con enfoque en calidad, estética y funcionalidad.
-      Creamos proyectos pensados para vivirse.
-    </p>
+    <p>Arquitectura, construcción y mantenimiento con enfoque en calidad, estética y funcionalidad. Creamos proyectos pensados para vivirse.</p>
   </section>
 
   <section id="servicios" class="section">
@@ -243,24 +113,41 @@
 
   <section id="contacto" class="section">
     <h2>Contacto</h2>
-    <p style="text-align:center; font-size:1.05rem;">
-      Cel: 722 397 8733 / 722 388 3266 · Valle de Bravo · dosarquitectos0@gmail.com
-    </p>
+    <p style="text-align:center; font-size:1.05rem;">Cel: 722 397 8733 / 722 388 3266 · Valle de Bravo · dosarquitectos0@gmail.com</p>
   </section>
 
   <footer>
     © 2025 D-os Arquitectura. Todos los derechos reservados.
   </footer>
 
-  <script>
-    // Toggle del menú hamburguesa
-    const header = document.getElementById('main-header');
-    const toggleBtn = document.querySelector('.menu-toggle');
+  <!-- BOTÓN FLOTANTE DE WHATSAPP -->
+  <a href="https://wa.me/527223978733" target="_blank" class="whatsapp-float">
+    
+  </a>
 
-    toggleBtn.addEventListener('click', () => {
-      header.classList.toggle('nav-open');
-    });
-  </script>
+  <style>
+    .whatsapp-float {
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      bottom: 20px;
+      right: 20px;
+      background: #25D366;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 32px;
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+      z-index: 999;
+    }
+    .whatsapp-float:hover {
+      background: #1ebe5d;
+    }
+  </style>
+
 </body>
 </html>
 
